@@ -1,0 +1,6 @@
+@ReservaInteligente_HostAddress = http://localhost:5183
+
+GET {{ReservaInteligente_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

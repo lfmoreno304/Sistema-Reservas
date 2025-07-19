@@ -19,6 +19,6 @@ public class Schedules
     public TimeSpan EndTime { get; set; }
 
     public bool IsAvailable { get; set; }
-    public Services Service { get; set; }
+    public Service Service { get; set; }
     public ICollection<Reservation> Reservations { get; set; }
 }

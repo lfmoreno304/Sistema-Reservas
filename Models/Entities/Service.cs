@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ReservaInteligente.Models.Entities;
 
-public class Services
+public class Service
 {
     [Key]
     public int Id { get; set; }

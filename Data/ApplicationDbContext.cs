@@ -11,7 +11,7 @@ namespace ReservaInteligente.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
-        public DbSet<Services> Services { get; set; }
+        public DbSet<Service> Services { get; set; }
         public DbSet<Schedules> Schedules { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

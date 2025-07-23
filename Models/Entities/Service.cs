@@ -9,10 +9,9 @@ public class Service
     public int Id { get; set; }
     [Required]
     [MaxLength(100)]
-    public string Name { get; set; }
-    [Required]
+    public required string Name { get; set; }
     [MaxLength(100)]
-    public string Description { get; set; }
+    public  string? Description { get; set; }
 
-    public ICollection<Schedules> Schedules { get; set; }
+    public ICollection<Schedules>? Schedules { get; set; }
 }

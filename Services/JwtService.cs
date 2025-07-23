@@ -16,11 +16,11 @@ public class JwtService
     public string GenerateToken(User user)
     {
         
-        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);
+        var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!);
         var creds = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
         var claims = new[]{
             new Claim(ClaimTypes.Name, user.Name),
-            new Claim(ClaimTypes.Role, user.Role.Name),
+            new Claim(ClaimTypes.Role, user.Role!.Name),
             new Claim(ClaimTypes.Email, user.Email),
             new Claim(ClaimTypes.NameIdentifier, user.Id.ToString())
         };

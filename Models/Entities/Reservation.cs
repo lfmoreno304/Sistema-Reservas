@@ -11,13 +11,13 @@ public class Reservation
     public DateTime ReservationDate { get; set; }
     [Required]
     [MaxLength(20)]
-    public String State { get; set; }
+    public required String State { get; set; }
     [Required]
     [ForeignKey("User")]
     public int UserId { get; set; }
-    public User User { get; set; }
+    public User? User { get; set; }
     [Required]
     [ForeignKey("Schedules")]
     public int SchedulesId { get; set; }
-    public Schedules Schedules { get; set; }
+    public Schedules? Schedules { get; set; }
 }

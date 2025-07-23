@@ -17,16 +17,16 @@ namespace ReservaInteligente.Controllers
             _userService = userService;
         }
         [HttpPost("login")]
-        public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
+        public async Task<IActionResult> Login([FromBody] AuthRequestDTO authRequest)
         {
-            var user = await _userService.AuthenticateUserAsync(loginRequest);
+            var user = await _userService.AuthenticateUserAsync(authRequest);
             if (user == null)
             {
                 return Unauthorized("Invalid credentials");
             }
 
             var token = _jwtService.GenerateToken(user);
-            return Ok(new AuthResponse
+            return Ok(new AuthResponseDTO
             {
                 Token = token,
                 Expires = DateTime.Now.AddMinutes(120)

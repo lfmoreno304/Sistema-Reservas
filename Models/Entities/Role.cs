@@ -9,7 +9,7 @@ public class Role
     public int Id { get; set; }
     [Required]
     [MaxLength(100)]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
-    public ICollection<User> Users { get; set; }
+    public ICollection<User>? Users { get; set; }
 }

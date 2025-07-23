@@ -13,7 +13,7 @@ public class UserService
     {
         _context = context;
     }
-    public async Task<User?> AuthenticateUserAsync(LoginRequest loginRequest)
+    public async Task<User?> AuthenticateUserAsync(AuthRequestDTO loginRequest)
     {
         var user = await _context.Users.Include(u => u.Role)
         .FirstOrDefaultAsync(u => u.Email == loginRequest.Email);

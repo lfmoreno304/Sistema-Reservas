@@ -22,6 +22,10 @@ namespace ReservaInteligente.Data
                 new Role { Id = 3, Name = "Medico" });
             modelBuilder.Entity<User>().HasData(
                 new User { Id = 1, Name = "Admin", Email = "admin@gmail.com", Password = "123456", RoleId = 1 });
+            modelBuilder.Entity<Service>().HasData(
+                new Service { Id = 1, Name = "Nutrición", Description = "Cita de nutrición" },
+                new Service { Id = 2, Name = "Psicología", Description = "Cita de psicología" },
+                new Service { Id = 3, Name = "Medicina General", Description = "Cita de medicina general" });
         }
     }
 }

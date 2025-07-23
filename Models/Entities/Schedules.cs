@@ -18,7 +18,7 @@ public class Schedules
     [Required]
     public TimeSpan EndTime { get; set; }
 
-    public bool IsAvailable { get; set; }
-    public Service Service { get; set; }
-    public ICollection<Reservation> Reservations { get; set; }
+    public bool IsAvailable { get; set; } = false;
+    public  Service? Service { get; set; }
+    public ICollection<Reservation>? Reservations { get; set; }
 }

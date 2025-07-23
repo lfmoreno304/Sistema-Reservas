@@ -8,19 +8,19 @@ namespace ReservaInteligente.Models.Entities
         public int Id { get; set; }
         [Required]
         [MaxLength(100)]
-        public string Name { get; set; }
+        public required string Name { get; set; }
         [Required]
         [MaxLength(100)]
         [EmailAddress]
-        public string Email { get; set; }
+        public required string Email { get; set; }
         [Required]
-        public string Password { get; set; }
+        public required string Password { get; set; }
 
         [Required]
         [ForeignKey("Role")]
         public int RoleId { get; set; }
 
-        public Role Role { get; set; }
-        public ICollection<Reservation> Reservations { get; set; }
+        public Role? Role { get; set; }
+        public ICollection<Reservation>? Reservations { get; set; }
     }
 }
